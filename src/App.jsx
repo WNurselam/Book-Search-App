@@ -1,14 +1,16 @@
-import { Flex } from '@chakra-ui/react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Page404 from './pages/404';
+import Home from './pages/Home';
 import './App.css'
 
 function App() {
   return (
-    <div>
-      <Flex>
-      Lets
-      </Flex>
-    </div>
- 
+   <BrowserRouter>
+    <Routes>
+    <Route path='*' element={<Page404/>} />
+    <Route path='/' element={<Home />}/>
+    </Routes>
+   </BrowserRouter>
   )
 }
 

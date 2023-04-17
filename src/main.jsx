@@ -2,7 +2,8 @@ import * as React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
-import { ChakraProvider,extendTheme } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { QueryClient, QueryClientProvider } from "react-query";
 
 
 const theme = extendTheme({
@@ -19,10 +20,13 @@ const theme = extendTheme({
     },
   },
 });
+const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <ChakraProvider theme={theme}>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <App />
+    </QueryClientProvider>
   </ChakraProvider>
 
 )
