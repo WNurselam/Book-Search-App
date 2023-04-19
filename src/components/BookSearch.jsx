@@ -4,13 +4,21 @@ import { Box, Input, InputGroup, InputLeftElement } from "@chakra-ui/react"
 import { useBookContext } from '../context/BookContext'
 
 const BookSearch = () => {
-  const {setQuery,setBooks,data } = useBookContext();
+  const {setQuery,setBooks,data,query} = useBookContext(); //context data
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit =  async (e) => {
     e.preventDefault();
-    setBooks(data?.items)   
+    if(query){
+      await setBooks(data?.items || [])
+    } 
   }
+
+  // useEffect(() => {
+  //   if (books.length > 0) {
+  //     console.log(books);
+  //   }
+  // }, [books.length])
 
   //console.log(books)
   return (
@@ -26,7 +34,7 @@ const BookSearch = () => {
       <form onSubmit={handleSubmit}>
         <InputGroup >
           <InputLeftElement pointerEvents="all">
-            <Search2Icon mt="3" />
+            <Search2Icon onClick={handleSubmit} mt="3" />
           </InputLeftElement >
           <Input 
           onChange={(e) =>setQuery(e.target.value)}

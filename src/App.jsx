@@ -3,6 +3,7 @@ import Page404 from './pages/404';
 import Home from './pages/Home';
 import './App.css'
 import BookProvider from './context/BookContext';
+import BookDetail from './pages/BookDetail';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path='*' element={<Page404 />} />
           <Route path='/' element={<Home />} />
+          <Route path="/detail/:id" element={<BookDetail />} />
         </Routes>
       </BrowserRouter>
     </BookProvider>
