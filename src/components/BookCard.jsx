@@ -1,4 +1,4 @@
-import { Flex, Grid, Card, CardBody, Image, Stack, CardFooter, Divider, Center, Heading, background } from '@chakra-ui/react'
+import { Flex, Grid, Card, CardBody, Image, Stack, CardFooter, Divider, Center, Heading, background, Box } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -13,21 +13,25 @@ const BookCard = ({ book }) => {
             ]}
                 gap={7}></Grid>
             <Card m="4"
-            background="#49FDBE" 
+                
                 _hover={{
-                    boxShadow: "10px 10px 47px 0px rgba(99, 99, 99, 0.5)",
+                    boxShadow: "10px 10px 47px 0px rgba(99, 99, 99, 0.2)",
                     transition: "400ms",
-                   
+
                 }}
                 width="200px" height="270px"
             >
                 <CardBody>
                     <Link to={`/detail/${book.id}`}>
-                    <Image src={book.volumeInfo.imageLinks?.thumbnail} objectFit='cover'  boxSize='200px'/>
+                        <Image
+                            src={book.volumeInfo.imageLinks?.thumbnail}
+                            objectFit='cover' boxSize='200px'
+
+                        />
                     </Link>
                     <Stack>
                         <Heading size="xs" mt="1">
-                            {book.volumeInfo.title.slice(0,10)}
+                            {book.volumeInfo.title.slice(0, 10)}
                         </Heading>
                     </Stack>
                 </CardBody>

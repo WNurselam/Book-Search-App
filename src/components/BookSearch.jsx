@@ -13,14 +13,6 @@ const BookSearch = () => {
       await setBooks(data?.items || [])
     } 
   }
-
-  // useEffect(() => {
-  //   if (books.length > 0) {
-  //     console.log(books);
-  //   }
-  // }, [books.length])
-
-  //console.log(books)
   return (
     <Box bgImage="url('https://cdn.pixabay.com/photo/2016/07/31/16/24/banner-1559400__340.jpg')"
       bgSize="cover"
@@ -38,7 +30,7 @@ const BookSearch = () => {
           </InputLeftElement >
           <Input 
           onChange={(e) =>setQuery(e.target.value)}
-          background="green.100" 
+          background="whiteAlpha.900"
           size="lg" type="text" 
           placeholder="Search books..."   
           />

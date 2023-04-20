@@ -1,5 +1,4 @@
-import {Box, Text } from '@chakra-ui/react';
-import { useBookContext } from '../context/BookContext';
+import {Box} from '@chakra-ui/react';
 import BookSearch from '../components/BookSearch';
 import BookList from '../components/BookList';
 const Home = () => {
