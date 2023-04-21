@@ -4,7 +4,7 @@ import { Box,Flex,Spinner } from '@chakra-ui/react';
 import BookCard from './BookCard';
 
 const BookList = () => {
-const { books,isLoading } = useBookContext();
+const { books,isLoading } = useBookContext();  //Context api steates
 
 ///console.log(books);
 if(isLoading){
@@ -17,10 +17,10 @@ if(isLoading){
 }
 
   return (
-    <Flex justifyContent="space-evenly" flexWrap="wrap">
+    <Flex justifyContent="space-evenly" flexWrap="wrap" mb="6" mt="5" >
       {
           books.length > 0 ? books.map((book) => (
-          <BookCard key={book.id}  book={book}/>
+          <BookCard key={book.id}  book={book} />
         )):<Box mt="24">You haven't searched for any books yet!</Box>
       }
       </Flex>
@@ -28,5 +28,3 @@ if(isLoading){
 }
 
 export default BookList
-
-//<Box key={book.id}>{book.volumeInfo.title}</Box>

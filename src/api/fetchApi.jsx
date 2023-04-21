@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// Api list by search
 export async function fetchApi(query) {
     try {
         const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=40`);

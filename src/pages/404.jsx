@@ -2,6 +2,7 @@ import { Button, Heading, Text,Image } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import gif404 from '../../public/404.gif'
 
+//Handling 404 page not found in React Router
 function Page404() {
     return (
         <Text >

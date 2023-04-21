@@ -5,6 +5,8 @@ import './App.css'
 import BookProvider from './context/BookContext';
 import BookDetail from './pages/BookDetail';
 
+
+// Context Api and React Router wrapping
 function App() {
   return (
     <BookProvider>

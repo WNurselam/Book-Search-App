@@ -7,6 +7,7 @@ const BookSearch = () => {
   const {setQuery,setBooks,data,query} = useBookContext(); //context data
 
 
+  // assigning api data to books when form is submitted
   const handleSubmit =  async (e) => {
     e.preventDefault();
     if(query){

@@ -5,7 +5,7 @@ import './index.css'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import { QueryClient, QueryClientProvider } from "react-query";
 
-
+// İmport Chakra UI tema
 const theme = extendTheme({
   fonts: {
     body: ` 'Roboto Slab', serif;`,
@@ -20,6 +20,7 @@ const theme = extendTheme({
     },
   },
 });
+// React Query Provider
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root')).render(

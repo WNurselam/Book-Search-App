@@ -4,14 +4,14 @@ import { fetchDetailApi } from '../api/fetchDetailApi'
 import { useParams } from 'react-router'
 import { Spinner, Box, Card, Image, Stack, CardBody, Heading, Text, Button, Flex } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
-
 import { ArrowBackIcon, WarningTwoIcon, InfoIcon } from '@chakra-ui/icons'
 
 
 const BookDetail = () => {
 
-  const { id } = useParams();
-
+  const { id } = useParams();  //id capture by click with router
+  
+  //Throwing request based on react query id parameter
   const { isLoading, error, data } = useQuery(['BookDetail', id], () => fetchDetailApi(id))
 
   if (isLoading) {
@@ -34,7 +34,7 @@ const BookDetail = () => {
   //console.log(data);
   return (
     <Flex justifyContent="center" align="center"  >
-      <Link to="/"><ArrowBackIcon color="blue.100" _hover={{ color: "blue.400", cursor: "pointer", transition: "0.5s" }} m="5" w={10} h={10} /></Link>
+      <Link to="/"><ArrowBackIcon color="blue.100" _hover={{ color: "blue.400", cursor: "pointer", transition: "0.5s" }}  w={10} h={10} /></Link>
       <Card boxShadow="lg" maxW='800px' overflowY="hidden" p="5"
       >
         <CardBody>
@@ -85,7 +85,7 @@ const BookDetail = () => {
             </Text>
           </Stack>
           <Button mt="4">
-            <Link to={data?.volumeInfo.previewLink}><Text p="5" mr="2">Details</Text></Link>
+            <Link to={data?.volumeInfo.previewLink}><Text p="5" mr="2">Info Book Google</Text></Link>
           </Button>
         </CardBody>
       </Card>
