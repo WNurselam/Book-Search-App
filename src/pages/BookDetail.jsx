@@ -98,7 +98,7 @@ const BookDetail = () => {
             '&::-webkit-scrollbar-thumb': {
               backgroundColor: `rgba(0, 0, 0, 0.05)`,
             },
-            pr: "3"
+            pr: "1"
           }} textAlign="justify" mt='3' spacing='3' >
             <Text color="gray.500" >
               {data?.volumeInfo.description ? data?.volumeInfo.description.replace(/<\/?([a-z][a-z0-9]*)\b[^>]*>/gi, '') : <Text>Nothing description   <InfoIcon /></Text>}
