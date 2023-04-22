@@ -16,26 +16,45 @@ const BookDetail = () => {
 
   if (isLoading) {
     return (
-      <Box p="10" >
-        <Spinner />
-        data is loading....
-      </Box>
+      <Flex justifyContent="center" alignItems="center" m="10" >
+        <Spinner size="lg"
+          thickness='4px'
+          speed='0.50s'
+          emptyColor='gray.200'
+          color='blue.500' />
+        <Box p="3">Details is loading...</Box>
+      </Flex>
     );
   }
   if (error) {
     return (
-      <Box p="10" >
+      <Flex justifyContent="center" alignItems="center" m="10" >
         <WarningTwoIcon w={10} h={10} />
-        Erorr....
-      </Box>
+        <Box p="3">An error has occurred...</Box>
+      </Flex>
     );
   }
 
   //console.log(data);
   return (
     <Flex justifyContent="center" align="center"  >
-      <Link to="/"><ArrowBackIcon color="blue.100" _hover={{ color: "blue.400", cursor: "pointer", transition: "0.5s" }}  w={10} h={10} /></Link>
-      <Card boxShadow="lg" maxW='800px' overflowY="hidden" p="5"
+      <Link to="/"><ArrowBackIcon color="blue.100" _hover={{ color: "blue.400", cursor: "pointer", transition: "0.5s" }}  
+      w={{
+        base:'6',
+        md: '8',
+        xl: '10',
+      }}
+      h={{
+        base:'6',
+        md: '8',
+        xl: '10',
+      }} 
+      
+      /></Link>
+      <Card boxShadow="lg" maxW='800px' overflowY="hidden" 
+            p={{ base: '0',
+            md: '3',
+            xl: '5',}}
       >
         <CardBody>
           <Flex direction={{
@@ -52,7 +71,8 @@ const BookDetail = () => {
             <Image
               src={data?.volumeInfo.imageLinks?.thumbnail}
               alt={data?.volumeInfo.title}
-              borderRadius='lg'
+              borderRadius='md'
+              boxShadow="lg"
             />
 
             <Stack textAlign="justify"  >

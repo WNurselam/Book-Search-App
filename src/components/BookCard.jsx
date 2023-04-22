@@ -26,6 +26,7 @@ const BookCard = ({ book }) => {
                     <Image
                         src={book.volumeInfo.imageLinks?.thumbnail}
                         objectFit='cover' boxSize='200px'
+                        borderRadius="sm"
 
                     />
                     <Stack>
